@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blogPeruano"
+    }
+  },
+  "defaultProject": "blogPeruano",
+  "cli": {
+    "analytics": "2497ab9b-1222-4684-8b5c-81696aae37f3"
+  }
 }
