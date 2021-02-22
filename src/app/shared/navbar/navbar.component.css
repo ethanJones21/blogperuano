@@ -84,10 +84,14 @@ a:focus {
   padding: 0.7rem 0.85rem;
   border-radius: 2rem;
 }
-.header-nav .header-nav-link.active {
+.myactive {
   background: rgba(227, 227, 227, 0.361);
   color: var(--color-text);
 }
+/* .header-nav .header-nav-link.active {
+  background: rgba(227, 227, 227, 0.361);
+  color: var(--color-text);
+} */
 
 .header-profile {
   display: flex;
@@ -193,6 +197,7 @@ a:focus {
 .overlay-search.show {
   display: block;
   opacity: 9;
+  height: 97.6px;
 }
 
 .ripple-container {

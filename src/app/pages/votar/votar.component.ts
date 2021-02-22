@@ -20,15 +20,7 @@ export class VotarComponent implements OnInit, OnDestroy {
     this.subs.add(this.candidatos$.subscribe());
   }
 
-  async votarCandidato( candidato: Candidato ) {
-    try {
-      await this.candidatoService.votarCandidato( candidato.id );
-      Swal.fire('Gracias','Gracias por tu voto', 'success' );
-    } catch (error) {
-      Swal.fire('Error','Opps, ocurrio un error', 'error' );
-    }
-  }
-
+  
   ngOnDestroy(): void{
     this.subs.unsubscribe();
   }

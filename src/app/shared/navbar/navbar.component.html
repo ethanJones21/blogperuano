@@ -1,19 +1,71 @@
 <!-- NAVBAR -->
 <header class="header" id="header">
-    <div class="header-logo"><a class="header-brand" href="javascript://">
-        <svg class="brand-logo" width="35" height="35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+    <div class="header-logo"><a class="header-brand" [routerLink]="['/']">
+        <!-- <svg class="brand-logo" width="35" height="35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
         <rect width="100%" height="100%" fill="#495057"></rect>
-        </svg><span class="brand-text">Blog del Peruano</span></a></div>
+        </svg> -->
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+          width="35" height="35" viewBox="0 0 512.000000 512.000000"
+          preserveAspectRatio="xMidYMid meet">
+
+          <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+          fill="#000000" stroke="none">
+          <path d="M3228 5105 c-34 -19 -108 -109 -158 -194 -134 -226 -120 -476 34
+          -648 l46 -51 0 -874 c0 -757 -2 -882 -16 -933 -30 -118 -103 -206 -214 -259
+          l-65 -31 -930 -5 c-877 -5 -933 -6 -980 -24 -121 -45 -215 -137 -257 -252 -18
+          -49 -22 -81 -22 -184 0 -110 3 -132 24 -185 39 -92 108 -127 179 -90 16 8 49
+          43 75 79 73 103 186 182 315 220 102 30 91 121 91 -754 0 -671 2 -775 15 -807
+          37 -87 89 -112 233 -113 65 0 114 5 135 14 39 16 82 61 96 99 7 18 11 152 11
+          368 l0 339 775 0 775 0 0 -339 c0 -216 4 -350 11 -368 14 -38 57 -83 96 -99
+          21 -9 70 -14 135 -14 110 0 164 16 201 58 42 47 46 81 47 437 l0 340 71 33
+          c145 68 258 221 311 422 l23 85 0 853 0 854 -24 19 c-31 26 -73 24 -99 -4
+          l-21 -22 -4 -850 c-3 -782 -4 -855 -21 -910 -56 -189 -146 -290 -298 -335 -37
+          -12 -71 -26 -75 -33 -4 -7 -10 -102 -13 -212 l-5 -200 -92 -3 -93 -3 0 196 c0
+          195 0 196 -25 220 l-24 25 -876 0 -876 0 -24 -25 c-25 -24 -25 -25 -25 -220
+          l0 -196 -92 3 -93 3 -3 712 -2 713 95 0 95 0 0 -90 c0 -83 2 -93 25 -115 30
+          -30 64 -32 99 -4 25 19 26 25 26 115 l0 94 484 0 c266 0 504 3 530 6 l46 7 0
+          -205 c0 -253 -8 -287 -83 -363 -83 -82 -98 -85 -448 -85 -276 0 -302 2 -353
+          21 -64 23 -138 97 -157 157 -24 76 -80 104 -130 63 -77 -62 53 -277 214 -352
+          l72 -34 320 -3 c344 -4 389 0 482 45 63 31 141 107 176 172 50 90 57 144 57
+          411 l0 245 41 29 c51 36 112 113 151 189 57 115 58 119 58 980 l0 787 84 0
+          c101 0 136 19 136 75 0 56 -35 75 -136 75 l-83 0 5 33 c11 61 63 157 115 212
+          123 130 317 166 479 88 109 -53 208 -180 226 -290 l7 -43 -86 0 c-104 0 -131
+          -16 -131 -75 0 -60 27 -75 135 -75 l89 0 0 -359 0 -360 26 -20 c30 -24 43 -26
+          77 -10 47 21 48 35 47 495 l-2 434 41 47 c131 153 163 338 92 531 -32 88 -116
+          224 -175 284 -61 62 -133 63 -193 3 l-33 -33 0 -207 c0 -193 -1 -207 -17 -202
+          -10 3 -46 17 -79 31 -85 36 -194 50 -278 36 -80 -13 -149 -35 -193 -62 l-33
+          -20 0 199 c0 173 -2 203 -18 232 -33 62 -115 88 -174 56z m8 -671 l-34 -55
+          -19 28 c-42 59 -56 117 -51 210 5 97 34 176 100 270 l33 48 3 -223 2 -224 -34
+          -54z m1046 307 c31 -77 31 -215 1 -281 -12 -25 -28 -54 -36 -64 -14 -19 -16
+          -18 -36 21 -11 23 -25 44 -31 48 -6 4 -10 92 -10 238 l0 232 45 -69 c24 -38
+          55 -94 67 -125z m-2932 -2841 c0 -55 -2 -60 -22 -60 -39 0 -151 -32 -216 -61
+          -86 -39 -179 -107 -240 -175 l-51 -56 -7 37 c-10 56 2 169 24 217 27 60 90
+          117 154 139 42 15 84 18 206 19 l152 0 0 -60z m338 -1632 l-3 -113 -90 0 -90
+          0 -3 113 -3 112 96 0 96 0 -3 -112z m2042 10 c0 -57 -4 -109 -9 -116 -5 -9
+          -31 -12 -92 -10 l-84 3 -3 113 -3 112 96 0 95 0 0 -102z"/>
+          <path d="M3590 4002 c-43 -21 -73 -71 -73 -122 0 -42 56 -155 99 -201 22 -22
+          24 -34 24 -110 l-1 -84 -24 27 c-14 16 -27 47 -31 74 -4 26 -15 55 -25 65 -24
+          24 -70 24 -100 0 -20 -16 -24 -28 -23 -68 5 -149 131 -267 284 -266 148 0 264
+          106 277 252 5 50 3 61 -16 80 -27 27 -82 28 -106 1 -9 -10 -21 -41 -26 -67 -6
+          -29 -19 -58 -34 -73 l-25 -25 0 81 c0 69 3 84 21 100 35 31 109 178 109 215 0
+          43 -31 94 -72 119 -45 27 -206 29 -258 2z m153 -167 c-9 -19 -20 -35 -24 -35
+          -4 0 -16 16 -28 35 l-20 35 44 0 45 0 -17 -35z"/>
+          </g>
+        </svg>
+
+        <span class="brand-text">Blog del Peruano</span></a></div>
     <div class="header-nav">
     <ul class="nav">
-
-        <li class="header-nav-item" routerLinkActive="active">
-            <a class="header-nav-link active" routerLink="/inicio">Inicio</a>
+        <li class="header-nav-item">
+            <a class="header-nav-link" routerLinkActive="myactive" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
         </li>
 
-        <li class="header-nav-item" routerLinkActive="active">
+        <li class="header-nav-item">
+            <a class="header-nav-link" routerLinkActive="myactive" [routerLink]="['/votar']" [routerLinkActiveOptions]="{exact: true}">Votar</a>
+        </li>
+        <!-- <li class="header-nav-item" routerLinkActive="active">
             <a class="header-nav-link ripple ripple-dark" routerLink="/votar">Votar</a>
-        </li>
+        </li> -->
 
     </ul>
     </div><a class="header-back ripple-grow" href="javascript://" id="back"><span class="ripple-waves ripple ripple-dark">
@@ -25,19 +77,32 @@
         <svg width="28px" height="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
             <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
         </svg></span>
-        <input class="header-search-input" id="header_search" type="text" placeholder="Search"/>
+
+        <input #termino (keyup.enter)="buscarCandidato(termino.value)"
+        class="header-search-input" id="header_search" type="text" placeholder="Search"/>
+
     </div>
     </div>
-    <div class="header-profile"><a class="hader-profile-links ripple-grow" href="javascript://"><span class="ripple-waves ripple ripple-dark">
-      <svg class="ripple-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M16,17H7V10.5C7,8 9,6 11.5,6C14,6 16,8 16,10.5M18,16V10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18M11.5,22A2,2 0 0,0 13.5,20H9.5A2,2 0 0,0 11.5,22Z"></path>
-      </svg></span></a><a class="hader-profile-links ripple-grow" href="javascript://"><span class="ripple-waves ripple ripple-dark">
-      <svg class="ripple-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+    <div class="header-profile">
+      <!-- <a class="hader-profile-links ripple-grow" href="javascript://">
+        <span class="ripple-waves ripple ripple-dark">
+          <svg class="ripple-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M16,17H7V10.5C7,8 9,6 11.5,6C14,6 16,8 16,10.5M18,16V10.5C18,7.43 15.86,4.86 13,4.18V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V4.18C7.13,4.86 5,7.43 5,10.5V16L3,18V19H20V18M11.5,22A2,2 0 0,0 13.5,20H9.5A2,2 0 0,0 11.5,22Z">
+
+            </path>
+          </svg>
+        </span>
+      </a> -->
+      <a class="hader-profile-links ripple-grow" href="javascript://"><span class="ripple-waves ripple ripple-dark">
+       <svg class="ripple-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
         <path fill="currentColor" d="M10,12A2,2 0 0,0 8,14A2,2 0 0,0 10,16A2,2 0 0,0 12,14A2,2 0 0,0 10,12M6,8A2,2 0 0,0 4,10A2,2 0 0,0 6,12A2,2 0 0,0 8,10A2,2 0 0,0 6,8M6,16A2,2 0 0,0 4,18A2,2 0 0,0 6,20A2,2 0 0,0 8,18A2,2 0 0,0 6,16M18,8A2,2 0 0,0 20,6A2,2 0 0,0 18,4A2,2 0 0,0 16,6A2,2 0 0,0 18,8M14,16A2,2 0 0,0 12,18A2,2 0 0,0 14,20A2,2 0 0,0 16,18A2,2 0 0,0 14,16M18,12A2,2 0 0,0 16,14A2,2 0 0,0 18,16A2,2 0 0,0 20,14A2,2 0 0,0 18,12M14,8A2,2 0 0,0 12,10A2,2 0 0,0 14,12A2,2 0 0,0 16,10A2,2 0 0,0 14,8M10,4A2,2 0 0,0 8,6A2,2 0 0,0 10,8A2,2 0 0,0 12,6A2,2 0 0,0 10,4Z"></path>
-      </svg></span></a><a class="hader-profile-links" href="javascript://">
-    <svg class="avatar" width="35" height="35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+      </svg></span></a>
+      
+      <a class="hader-profile-links" href="javascript://">
+      <svg class="avatar" width="35" height="35" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
       <rect width="100%" height="100%" fill="#495057"></rect>
-    </svg></a></div>
+      </svg></a>
+    </div>
 </header>
 <!-- Overlay-->
 <div class="overlay-search" id="overlay_search"></div>

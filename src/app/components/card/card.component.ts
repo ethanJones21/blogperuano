@@ -24,14 +24,39 @@ export class CardComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
-  async votarCandidato( candidato: Candidato ) {
-    try {
-      await this.candidatoService.votarCandidato( candidato.id );
-      Swal.fire('Gracias','Gracias por tu voto', 'success' );
-    } catch (error) {
-      Swal.fire('Error','Opps, ocurrio un error', 'error' );
-    }
-  }
+  votarCandidato( candidato: Candidato ) {
+    
+    Swal.fire({
+      title: 'Nombre completo',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Votar',
+      showLoaderOnConfirm: true,
+      preConfirm: (nombrecompleto) => {
+        return this.candidatoService.enviarVotante(nombrecompleto)
+          .then(response => {
+            console.log(response);
+            return response;
+          })
+          .catch(error => {
+            Swal.showValidationMessage(
+              `Request failed: ${error}`
+            )
+          })
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    }).then(async(result) => {
+      if (result.isConfirmed) {
+        this.candidatoService.votarCandidato( candidato.id );
+        Swal.fire('Gracias','Gracias por tu voto', 'success' );
+      }
+    })
+  
+}
+
 
   verPerfil(candidato: Candidato){
     this.router.navigate(['/votar',candidato.id]);

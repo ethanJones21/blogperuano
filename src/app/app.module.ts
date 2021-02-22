@@ -10,10 +10,11 @@ import { ComponentsModule } from './components/components.module';
 import { SharedModule } from './shared/shared.module';
 import { CandidatoService } from './providers/candidato.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { BusquedaComponent } from './pages/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,11 @@ import { environment } from '../environments/environment';
     InicioComponent,
     VotarComponent,
     PerfilComponent,
+    BusquedaComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ComponentsModule,
     SharedModule,
