@@ -1,0 +1,62 @@
+
+
+<div *ngIf="candidato$ | async as candidato; else loading">
+  <div class="fixed mt-5 p-4 mx-12 mt-2">
+    <a
+    href="javascript:window.history.back()"
+      class="w-1/2 rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">&larr; Atrás</a>
+  </div>
+  
+  <header
+  class="bg-header flex items-center justify-center h-screen pb-12">
+    <div class="bg-white font-serif mx-4 p-4 text-center md:p-8">
+      <p class="italic text-sm">
+        {{ candidato.partido }}
+      </p>
+      <h2 class="text-5xl uppercase">
+        {{ candidato.nombre }}
+      </h2>
+      <p class="text-lg">
+        {{ candidato.postula }}
+      </p>
+    </div>
+  </header> 
+
+<div class="font-serif leading-normal mx-auto py-12 px-4 max-w-lg">
+  <p class="mb-6 text-xl md:text-2xl uppercase">Plan de gobierno</p>
+  <!-- <p class="mb-4 text-lg">Quae commodi reiciendis dignissimos. Rerum molestiae hic dolores assumenda dolor! Corrupti reiciendis maxime fuga, recusandae obcaecati officia cum temporibus dicta quibusdam praesentium, magni, cumque aperiam iusto sequi illum molestiae non.</p> -->
+  <ul class="list-disc space-y-2 flex flex-col items-start justify-around px-14">
+    <ng-container *ngFor="let plan of candidato.plan">
+      <li class="flex items-start">
+        <span class="h-6 flex items-center sm:h-7">
+          <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <p class="ml-2">
+          {{ plan | titlecase }}
+        </p>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+
+<div class="bg-quote container flex items-center justify-center h-screen mx-auto">
+  <blockquote class="bg-black font-serif mx-4 p-4 text-center text-white md:p-8">
+    <p class="font-bold italic text-3xl">
+      <!-- &ldquo;Large, bold pull quote. Hats. Very good.&rdquo; -->
+      Biografía
+    </p>
+  </blockquote>
+</div>
+
+<div class="font-serif leading-normal mx-auto py-12 px-4 max-w-lg">
+  <p class="mb-4 text-lg">{{ candidato.biografia }}</p>
+</div>
+</div>
+
+
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

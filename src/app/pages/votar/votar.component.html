@@ -1,0 +1,21 @@
+
+<div *ngIf="candidatos$ | async as candidatos; else loading">
+    <div class="text-3xl font-bold p-8 lg:pt-0 px-16 border-b">
+        <h1>Vota por un candidato</h1>
+    </div>
+    
+    <div
+    class="grid grid-cols-3 grid-rows-4 gap-8 grid-flow-row mb-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <ng-container *ngFor="let candidato of candidatos">
+            <app-card [candidato]="candidato"></app-card>
+        </ng-container>
+    </div>
+    
+    <div class="banner p-20">
+        hola
+    </div>
+</div>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

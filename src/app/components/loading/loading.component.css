@@ -1,0 +1,53 @@
+.spinner2{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner2 .circle {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  margin: 0.1rem;
+  -webkit-animation: scale 0.5s linear 0s infinite alternate;
+  animation: scale 0.5s linear 0s infinite alternate;
+}
+.spinner2 .circle.one {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.spinner2 .circle.two {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.spinner2 .circle.three {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+@-webkit-keyframes scale {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes up {
+  from {
+    transform: translatey(0.5rem);
+  }
+  to {
+    transform: translatey(0);
+  }
+}

@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root{
+    --color-primary: #ec4646;
+    --color-primary-alt: #663f3f;
+    --color-secondary: #111827;
+    --color-third: #FBC53C;
+    --color-gray: #495057;
+    --color-text: #0a0c0e;
+    --color-text-2: #212529;
+    --box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.text-primary{
+    color: var(--color-secondary);
+}
+
+.pointer{
+    cursor: pointer;
+}
