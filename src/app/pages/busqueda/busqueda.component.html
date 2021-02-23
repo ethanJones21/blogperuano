@@ -1,20 +1,23 @@
 
 <div *ngIf="candidatos$ | async as candidatos; else loading">
     <div class="text-3xl text-center font-bold p-8 mt-16 lg:pt-0 px-16 border-b">
-        <h1>Resultados de: {{ termino }}</h1>
+        <h2>Resultados de: {{ termino }}</h2>
     </div>
-    
-    <div
-    class="grid grid-cols-3 grid-rows-4 gap-8 grid-flow-row mb-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+    <div class="grid grid-cols-3 grid-rows-4 gap-8 grid-flow-row mb-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         <ng-container *ngFor="let candidato of candidatos">
             <app-card [candidato]="candidato"></app-card>
         </ng-container>
     </div>
-    
-    <div class="banner p-20">
+    <div *ngIf="candidatos.length === 0" class="flex justify-center align-center">
+        <h4>No hay resultados</h4>
     </div>
+</div>
+
+<div class="banner p-20">
 </div>
 
 <ng-template #loading>
     <app-loading></app-loading>
 </ng-template>
+
+<!-- TODO: LIMPIAR BUSQUEDA Y PONER NO RESULTADOS, LINKS DE REFERENCIA, URL, FACEBOOK TWITER, GOOGLE ADSENSE -->

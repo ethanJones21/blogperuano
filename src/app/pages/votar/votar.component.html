@@ -13,6 +13,31 @@
     
     <div class="banner p-20">
     </div>
+
+    <div class="text-2xl text-center font-bold p-8 lg:pt-0 px-16 border-b">
+        <h2>Información extra</h2>
+    </div>
+    
+    <div class="p-16 flex items-center justify-center">
+        <table class="rwd-table">
+            <thead>
+                <tr>
+                    <th>Partido</th>
+                    <th>Cambio Constitucion</th>
+                    <th>Reforma Politica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let candidato of candidatos">
+                    <tr>
+                        <td data-th="Partido">{{candidato.partido}}</td>
+                        <td data-th="Cambio Constitucion">{{candidato.cambioConstitucion}}</td>
+                        <td data-th="Reforma Politica">{{candidato.reformaPolitica}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <ng-template #loading>

@@ -11,13 +11,13 @@
   class="bg-header flex items-center justify-center h-screen pb-12">
     <div class="bg-white font-serif mx-4 p-4 text-center md:p-8">
       <p class="italic text-sm">
-        {{ candidato.partido }}
+        {{ candidato.partido | titlecase }}
       </p>
       <h2 class="text-5xl uppercase">
-        {{ candidato.nombre }}
+        {{ candidato.nombre | titlecase }}
       </h2>
       <p class="text-lg">
-        {{ candidato.postula }}
+        {{ candidato.postula | titlecase }}
       </p>
     </div>
   </header> 
@@ -42,7 +42,7 @@
 </div>
 
 <div class="bg-quote container flex items-center justify-center h-screen mx-auto">
-  <blockquote class="bg-black font-serif mx-4 p-4 text-center text-white md:p-8">
+  <blockquote class="bg-gray-900 font-serif mx-4 p-4 text-center text-white md:p-8">
     <p class="font-bold italic text-3xl">
       <!-- &ldquo;Large, bold pull quote. Hats. Very good.&rdquo; -->
       Biografía
@@ -52,6 +52,9 @@
 
 <div class="font-serif leading-normal mx-auto py-12 px-4 max-w-lg">
   <p class="mb-4 text-lg">{{ candidato.biografia }}</p>
+  <div class="flex items-end py-5 px-auto">
+    <a [href]="candidato.url" target="_blank" class="hover:text-gray-900 pointer"> Más información &rarr; </a>
+  </div>
 </div>
 </div>
 

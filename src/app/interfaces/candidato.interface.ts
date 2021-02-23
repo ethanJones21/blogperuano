@@ -8,5 +8,9 @@ export interface Candidato {
     imgPartido: string;
     url: string;
     votos: number;
-    biografia?: string;
+    vicepresidentes: string[];
+    cambioConstitucion: string;
+    reformaPolitica: string;
+    biografia: string;
+    sentenciados: number;
 }

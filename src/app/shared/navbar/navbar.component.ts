@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -33,6 +34,11 @@ export class NavbarComponent implements OnInit {
 
   buscarCandidato(termino: string){
     this.router.navigate(['/busqueda',termino])
+  }
+
+  borrarBusqueda(termino: any){
+    // window.history.back();
+    termino.value = '';
   }
 
 }

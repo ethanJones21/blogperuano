@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
+import { HablaPeruComponent } from './pages/habla-peru/habla-peru.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BusquedaComponent } from './pages/busqueda/busqueda.component';
     VotarComponent,
     PerfilComponent,
     BusquedaComponent,
+    HablaPeruComponent,
   ],
   imports: [
     BrowserModule,
