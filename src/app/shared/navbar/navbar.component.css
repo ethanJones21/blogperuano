@@ -381,3 +381,10 @@ a:focus {
     display: flex;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .search-form{
+    margin-left: 3rem;
+    width: 3rem;
+  }
+}

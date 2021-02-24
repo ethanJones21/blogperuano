@@ -24,6 +24,15 @@
   cursor: pointer;
 }
 
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 1000ms;
+}
+
 /* TABLE */
 
 .rwd-table {
@@ -115,4 +124,31 @@ tbody:hover td {
 tbody:hover tr:hover td {
   color: #444;
   text-shadow: 0 1px 0 #fff;
+}
+/* effects */
+
+.animated {
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
 }

@@ -7,25 +7,19 @@
 </div>
 
 <div class="text-2xl text-center font-bold p-8 lg:pt-0 px-16 border-b">
-    <h2>Nombres de los votantes</h2>
+    <h2>Lista de los votantes</h2>
 </div>
 
 <div *ngIf="votantes$ | async; let votantes; else loading"
 class="p-16 flex items-center justify-center">
-    <table class="rwd-table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let votante of votantes">
-                <tr>
-                    <td data-th="Partido">{{votante.nombrecompleto}}</td>
-                </tr>
-            </ng-container>
-        </tbody>
-    </table>
+    <div class="grid-gallery" *ngIf="votantes.length > 0">
+        <ng-container *ngFor="let votante of votantes">
+            <span class="grid-gallery__item">{{votante.nombrecompleto}}</span>
+        </ng-container>
+    </div>
+    <div *ngIf="votantes.length === 0">
+        <h4 class="text-1xl">No hay votantes aun</h4>
+    </div>
 </div>
 
 <div class="banner p-20">

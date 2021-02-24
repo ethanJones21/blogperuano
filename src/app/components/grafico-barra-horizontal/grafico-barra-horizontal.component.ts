@@ -1,4 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  BreakpointObserver,
+  Breakpoints,
+  BreakpointState
+} from '@angular/cdk/layout';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-grafico-barra-horizontal',
@@ -6,7 +12,6 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./grafico-barra-horizontal.component.css']
 })
 export class GraficoBarraHorizontalComponent implements OnInit, OnDestroy {
-
 
   @Input() results: any[] = [];
   
@@ -21,19 +26,33 @@ export class GraficoBarraHorizontalComponent implements OnInit, OnDestroy {
   yAxisLabel = 'Candidatos';
 
   colorScheme = 'nightLights';
+  subs = new Subscription();
 
   // intervalo;
 
-  constructor() {
+  constructor(public breakpointObserver: BreakpointObserver) {
   }
 
-  ngOnInit():void{}
+  ngOnInit():void{
+    // ESTO YA FUNCIONA
+    // if (this.breakpointObserver.isMatched('(max-width: 500px)')) {
+    //   this.showLegend = false;
+    // }
+    this.subs.add(this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.showLegend = false
+        }
+      })); 
+  }
 
   onSelect(event) {
     console.log(event);
   }
 
   ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 
 }

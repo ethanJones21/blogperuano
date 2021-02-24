@@ -15,7 +15,7 @@ export class CardComponent implements OnInit, OnDestroy {
   @Input('candidato') candidato: Candidato;
   subs = new Subscription();
 
-  constructor(private candidatoService: CandidatoService, private router: Router ) { }
+  constructor(private candidatoService: CandidatoService, private router: Router) { }
 
   ngOnInit() {
   }
