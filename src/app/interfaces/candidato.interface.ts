@@ -13,4 +13,10 @@ export interface Candidato {
     reformaPolitica: string;
     biografia: string;
     sentenciados: number;
+    procesoJNE: boolean;
+}
+
+export interface soloVotos {
+    name: string;
+    value: number;
 }

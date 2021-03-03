@@ -1,19 +1,16 @@
-
 <div *ngIf="candidatos$ | async as candidatos; else loading">
     <div class="text-3xl text-center font-bold p-8 mt-16 lg:pt-0 px-16 border-b">
         <h1>Vota por tu candidato</h1>
     </div>
+    <p class="text-1xl text-center">El boton rojo significa que está excluido parcialmente o en proceso por el JNE, igualmente esta es una simulación viendo que deciden los peruanos si estuvieran todos los candidatos</p>
     
     <div
-    class="grid grid-cols-3 grid-rows-4 gap-8 grid-flow-row mb-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+    class="grid grid-cols-1 grid-rows-4 gap-8 grid-flow-row mb-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         <ng-container *ngFor="let candidato of candidatos">
             <app-card [candidato]="candidato"></app-card>
         </ng-container>
     </div>
     
-    <div class="banner p-20">
-    </div>
-
     <div class="text-2xl text-center font-bold p-8 lg:pt-0 px-16 border-b">
         <h2>Información extra</h2>
     </div>

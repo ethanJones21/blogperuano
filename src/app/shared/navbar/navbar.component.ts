@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.searchEffect()
+    this.searchEffect();
   }
 
   searchEffect(){
@@ -31,7 +32,7 @@ export class NavbarComponent implements OnInit {
       OVERLAY.classList.remove('show');
     });
   }
-
+  
   buscarCandidato(termino: string){
     this.router.navigate(['/busqueda',termino])
   }

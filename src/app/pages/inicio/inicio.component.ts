@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Candidato } from '../../interfaces/candidato.interface';
+import { soloVotos } from 'src/app/interfaces/candidato.interface';
 import { Votante } from '../../interfaces/votante.interface';
+import { CandidatoService } from '../../providers/candidato.service';
+import { VotanteService } from '../../providers/votante.service';
+
+
 
 @Component({
   selector: 'app-inicio',
@@ -12,11 +14,12 @@ import { Votante } from '../../interfaces/votante.interface';
 })
 export class InicioComponent implements OnInit, OnDestroy {
   loading: boolean = true;
-  candidatos: any[] =[];
+  candidatos: soloVotos[] =[];
   votantes$: Observable<Votante[]>;
   subs = new Subscription();
 
-  constructor( private db: AngularFirestore ) { }
+  constructor(private candidatoService: CandidatoService,
+              private votanteService: VotanteService ) { }
 
   ngOnInit() {
     this.cargarCandidatos();
@@ -28,17 +31,14 @@ export class InicioComponent implements OnInit, OnDestroy {
   }
 
   cargarCandidatos(){
-    this.subs.add(this.db.collection<Candidato>('candidatos').valueChanges()
-      .pipe(
-        map( (resp: Candidato[]) => resp.map( ({ nombre, votos }) => ({ name: nombre, value: votos }) ))
-      )
+    this.subs.add(this.candidatoService.obtenerVotosCandidatos()
       .subscribe( candidatos => {
         this.candidatos = candidatos;
       }));
   }
 
   cargarVotantes(){
-    this.votantes$ = this.db.collection<Votante>('votantes').valueChanges();
+    this.votantes$ = this.votanteService.obtenerVotantes();
     this.subs.add(this.votantes$.subscribe());
   }
 

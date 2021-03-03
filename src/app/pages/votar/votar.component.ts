@@ -16,7 +16,7 @@ export class VotarComponent implements OnInit, OnDestroy {
   constructor(private candidatoService: CandidatoService ) { }
 
   ngOnInit() {
-    this.candidatos$ = this.candidatoService.getNominados();
+    this.candidatos$ = this.candidatoService.obtenerCandidatos();
     this.subs.add(this.candidatos$.subscribe());
   }
 
