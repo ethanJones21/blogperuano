@@ -14,7 +14,7 @@
 class="p-16 flex items-center justify-center">
     <div class="grid-gallery" *ngIf="votantes.length > 0">
         <ng-container *ngFor="let votante of votantes">
-            <span class="grid-gallery__item">{{votante.nombrecompleto}}</span>
+            <span class="grid-gallery__item">{{ votante.nombrecompleto | titlecase }}</span>
         </ng-container>
     </div>
     <div *ngIf="votantes.length === 0">

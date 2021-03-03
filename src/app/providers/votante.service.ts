@@ -17,7 +17,8 @@ export class VotanteService {
 
   enviarVotante(nombrecompleto: string){
     const id = this.db.createId();
-    const item = { id, nombrecompleto };
+    const fechaVoto = new Date();
+    const item = { id, nombrecompleto, fechaVoto };
     return this.votantesCollection.doc(id).set(item);
   }
 
@@ -32,6 +33,7 @@ export class VotanteService {
         if(!termino){
           return ref.orderBy('fechaVoto','desc');
         } else {
+          termino = termino.charAt(0).toUpperCase() + termino.slice(1);
           return ref.orderBy('fechaVoto').startAt(termino).endAt(termino+'\uf8ff')
         }
       } 

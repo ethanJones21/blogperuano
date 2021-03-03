@@ -1,8 +1,9 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Candidato } from '../../interfaces/candidato.interface';
+import { VotanteService } from '../../providers/votante.service';
 import { CandidatoService } from '../../providers/candidato.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class CardComponent implements OnInit, OnDestroy {
   @Input('candidato') candidato: Candidato;
   subs = new Subscription();
 
-  constructor(private candidatoService: CandidatoService, private router: Router) { }
+  constructor(private candidatoService: CandidatoService, private votanteService: VotanteService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -36,7 +37,7 @@ export class CardComponent implements OnInit, OnDestroy {
       confirmButtonText: 'Votar',
       showLoaderOnConfirm: true,
       preConfirm: (nombrecompleto) => {
-        return this.candidatoService.enviarVotante(nombrecompleto)
+        return this.votanteService.enviarVotante(nombrecompleto)
           .then(response => {
             console.log(response);
             return response;

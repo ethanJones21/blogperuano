@@ -1,13 +1,11 @@
 .bg-header {
-  /* background: url(https://picsum.photos/1920/1920/?random) center center no-repeat; */
-  background: url('./../../../assets/fondo1.png') center center no-repeat;
-  background-attachment: fixed;
+  background: rgb(17,24,39);
+  background: linear-gradient(0deg, rgba(17,24,39,1) 0%, rgba(251,197,60,1) 100%);
 }
 
 .bg-quote {
-  /* background: url(https://picsum.photos/1600/1600/?random) center center no-repeat; */
-  background: url('./../../../assets/fondo4.png') center center no-repeat;
-  background-attachment: fixed;
+  background: rgb(17,24,39);
+  background: linear-gradient(0deg, rgba(17,24,39,1) 0%, rgba(251,197,60,1) 100%);
 }
 
 button:focus {

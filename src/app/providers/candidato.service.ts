@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 // import * as firebase from 'firebase/app';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+// import firebase from 'firebase';
 
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -32,7 +33,7 @@ export class CandidatoService {
         if(!termino){
           return ref.orderBy('votos','desc');
         } else {
-          // termino = termino.toLowerCase();
+          termino = termino.charAt(0).toUpperCase() + termino.slice(1);
           return ref.orderBy('votos').startAt(termino).endAt(termino+'\uf8ff')
         }
       } 
@@ -61,6 +62,7 @@ export class CandidatoService {
       if(!termino){
         return ref.orderBy('votos','desc');
       } else {
+        termino = termino.charAt(0).toUpperCase() + termino.slice(1);
         return ref.orderBy('nombre').startAt(termino).endAt(termino+'\uf8ff')
       }
     } 
