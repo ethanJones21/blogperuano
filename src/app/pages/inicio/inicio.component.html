@@ -18,8 +18,12 @@ class="p-16 flex items-center justify-center">
         </ng-container>
     </div>
     <div *ngIf="votantes.length === 0">
-        <h4 class="text-1xl">No hay votantes aun</h4>
+        <h4 class="text-1xl">No hay votantes aun, <a class="link-red" [routerLink]="['/votar']">Vota aquí</a></h4>
     </div>
+</div>
+
+<div class="banner">
+    <a href="https://exe.io/ref/roberto2021"><img src="https://exe.io/img/ref/r1.gif" title="CuT URLs - Earn money by shortening links with the highest CPMs Ever!" /></a>
 </div>
 
 <ng-template #loading>

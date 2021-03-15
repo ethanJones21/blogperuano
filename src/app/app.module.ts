@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
 import { HablaPeruComponent } from './pages/habla-peru/habla-peru.component';
 
