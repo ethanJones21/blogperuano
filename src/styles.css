@@ -16,6 +16,15 @@
     0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
+.hr-min{
+  width: 50%;
+  border: 1px dotted var(--color-primary);
+}
+
+.border-primary{
+  border-color: var(--color-primary);
+}
+
 .bg-primary{
   background: var(--color-primary);
 }

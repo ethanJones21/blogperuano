@@ -8,11 +8,11 @@ import { VotanteService } from '../../providers/votante.service';
 
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  selector: 'app-graficas',
+  templateUrl: './graficas.component.html',
+  styleUrls: ['./graficas.component.css']
 })
-export class InicioComponent implements OnInit, OnDestroy {
+export class GraficasComponent implements OnInit, OnDestroy {
   loading: boolean = true;
   candidatos: soloVotos[] =[];
   votantes$: Observable<Votante[]>;

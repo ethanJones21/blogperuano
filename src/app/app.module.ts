@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InicioComponent } from './pages/inicio/inicio.component';
+import { GraficasComponent } from './pages/grafica/graficas.component';
 import { VotarComponent } from './pages/votar/votar.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ComponentsModule } from './components/components.module';
@@ -20,7 +20,7 @@ import { HablaPeruComponent } from './pages/habla-peru/habla-peru.component';
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
+    GraficasComponent,
     VotarComponent,
     PerfilComponent,
     BusquedaComponent,
